@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8ef">
+  <title>Cat Care | 고양이 돌봄 일지</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="cat-icon">
+  <img src="images/yangmal.png" alt="양말이 사진">
+</div>
+      <p class="eyebrow">PROJECT YANGMAL</p>
+      <h1>양말 프로젝트</h1>
+      <p> 🐾</p>
+    </header>
+
+    <section class="card">
+      <h2>🐈 김 양말</h2>
+      <p>이름: <strong id="catName"></strong></p>
+      <p id="catIntro"></p>
+    </section>
+
+    <nav class="day-tabs" aria-label="돌봄 날짜 선택">
+      <button class="day active" data-day="0">DAY 1</button>
+      <button class="day" data-day="1">DAY 2</button>
+      <button class="day" data-day="2">DAY 3</button>
+    </nav>
+
+    <section class="card">
+      <h2 id="dayTitle">1일 차</h2>
+      <p class="muted" id="dayDate"></p>
+      <div class="progress-info">
+        <span>오늘의 달성률</span>
+        <strong id="progressText">0%</strong>
+      </div>
+      <div class="progress-bar">
+        <div id="progressFill"></div>
+      </div>
+      <p class="muted" id="progressCount"></p>
+    </section>
+
+    <section class="card">
+      <h2>📝 체크리스트</h2>
+      <div id="taskList"></div>
+      <p id="completeMessage" class="success" hidden>
+        🎉 김양말 모시기 완료
+      </p>
+    </section>
+
+    
+
+    <section class="card">
+      <h2>📖 가이드</h2>
+      <div id="guideList"></div>
+    </section>
+
+
+
+    <footer>
+      감사합니다 ❤️ 
+    </footer>
+  </main>
+</body>
+</html>

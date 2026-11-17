@@ -1,0 +1,232 @@
+@import url("https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.css");
+
+:root {
+  --bg: #fff8ef;
+  --card: #ffffff;
+  --text: #403a36;
+  --muted: #817a73;
+  --peach: #f5c7ac;
+  --green: #6d9d83;
+  --line: #eee5dc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Pretendard", "sans-serif",
+    sans-serif;
+  line-height: 1.6;
+}
+
+.app {
+  width: min(100%, 520px);
+  margin: auto;
+  padding: 18px 16px 40px;
+}
+
+.hero {
+  text-align: center;
+  padding: 28px 10px 20px;
+}
+
+.cat-icon {
+  font-size: 58px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--green);
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 25px;
+  margin: 8px 0;
+}
+
+h2 {
+  font-size: 17px;
+  margin: 0 0 14px;
+}
+
+p {
+  margin: 8px 0;
+}
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  margin: 16px 0;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(60, 40, 20, .04);
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.day-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.day {
+  flex: 1;
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 13px;
+  padding: 13px 4px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.day.active {
+  background: var(--peach);
+  border-color: var(--peach);
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.progress-bar {
+  height: 12px;
+  background: #e9eee9;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+#progressFill {
+  height: 100%;
+  width: 0%;
+  background: var(--green);
+  border-radius: 20px;
+  transition: width .25s ease;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.task:last-child {
+  border-bottom: 0;
+}
+
+.task input {
+  width: 23px;
+  height: 23px;
+  accent-color: var(--green);
+  flex-shrink: 0;
+}
+
+.task-icon {
+  font-size: 25px;
+}
+
+.task-content {
+  flex: 1;
+}
+
+.task-title {
+  display: block;
+  font-weight: bold;
+}
+
+.task-description {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.task.done .task-title {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.success {
+  background: #eaf5ee;
+  color: #397354;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font: inherit;
+  resize: vertical;
+}
+
+.guide-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-item:last-child {
+  border-bottom: 0;
+}
+
+.guide-item strong {
+  display: block;
+}
+
+.guide-item p {
+  white-space: pre-line;
+}
+
+.emergency {
+  background: #fff1ec;
+}
+
+.contact {
+  display: block;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 12px;
+  background: white;
+  color: #4c594e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact.disabled {
+  color: var(--muted);
+  font-weight: normal;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
