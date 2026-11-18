@@ -24,12 +24,17 @@ const CONFIG = {
       description: "수도꼭지가 잘 잠겼는 지 확인하기"
     },
     {
-      title: "🧹 양말이 화장실",
-      description: "변기 레버를 3초간 누르기."
+      title: "🪏 양말이 화장실",
+      description: "잠시 모래를 녹인 뒤 변기 레버를 3초간 누르기"
     },
     {
-      title: "🐱 주의사항",
-      description: "중문을 닫아 김양말의 가출 막기."
+      title: "🦎 도마뱀들 물 뿌려주기",
+      description: "물뿌리개로 테라리움 전체에 충분히 뿌려주기",
+      image: "images/lizard.jpg"
+    },
+    {
+      title: "🚪 주의사항",
+      description: "중문을 닫아 김양말의 가출 막기"
     }
   ],
 
@@ -54,7 +59,7 @@ const TASKS = [
     id: "food",
     icon: "🍚",
     title: "사료 챙기기",
-    description: "기존 그릇은 한번 씻어주세요."
+    description: "부엌 바닥에 있는 기존 그릇은 한번 씻어주세요."
   },
   {
     id: "water",
@@ -64,7 +69,7 @@ const TASKS = [
   },
   {
     id: "litter",
-    icon: "🧹",
+    icon: "🪏",
     title: "양말이 화장실 청소",
     description: "모래 속에 숨어있는 감자와 맛동산을 캐내어 변기에 버려주세요."
   },
@@ -75,11 +80,17 @@ const TASKS = [
     description: "만져줄 때 물리지 않도록 주의하세요. 더 놀아주고 싶다면 냉장고 최하단의 간식을 던져주며 놀아주세요."
   },
   {
-    id: "door",
-    icon: "🚪",
-    title: "문단속 확인",
-    description: "중문과 창문을 안전하게 닫아주세요."
-  }
+  id: "photo",
+  icon: "📸",
+  title: "양말이 사진 보내주기",
+  description: "양말 인증샷을 얀에게 보내주세요."
+},
+{
+  id: "lizard",
+  icon: "🦎",
+  title: "도마뱀들 물 뿌려주기",
+  description: "도마뱀 테라리움 두 곳에 물을 뿌려주세요."
+}
 ];
 
 // =====================================
@@ -222,6 +233,10 @@ function updateProgress() {
 function changeDay(dayIndex) {
   currentDay = dayIndex;
 
+document.querySelector("#completeMessage strong").innerHTML =
+  dayIndex === 1 ? "코보스 획득!" : "김양말<br>모시기 완료";
+
+
   document.querySelectorAll(".day").forEach(button => {
     const active = Number(button.dataset.day) === dayIndex;
     button.classList.toggle("active", active);
@@ -229,7 +244,7 @@ function changeDay(dayIndex) {
   });
 
   document.getElementById("dayTitle")
-    .textContent = `${dayIndex + 1}일 차 돌봄`;
+    .textContent = `${dayIndex + 1}일 차`;
 
   document.getElementById("dayDate")
     .textContent = getDayDate(dayIndex);

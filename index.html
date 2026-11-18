@@ -28,7 +28,6 @@
     <nav class="day-tabs" aria-label="돌봄 날짜 선택">
       <button class="day active" data-day="0">DAY 1</button>
       <button class="day" data-day="1">DAY 2</button>
-      <button class="day" data-day="2">DAY 3</button>
     </nav>
 
     <section class="card">
@@ -44,12 +43,22 @@
       <p class="muted" id="progressCount"></p>
     </section>
 
+    
     <section class="card">
       <h2>📝 체크리스트</h2>
-      <div id="taskList"></div>
-      <p id="completeMessage" class="success" hidden>
-        🎉 김양말 모시기 완료
-      </p>
+
+
+<div class="task-area">
+  <div id="taskList"></div>
+
+  <div id="completeMessage" class="complete-stamp" hidden>
+    <span class="stamp-top">★ MISSION COMPLETE ★</span>
+    <strong>김양말<br>모시기 완료</strong>
+    <span class="stamp-bottom">🐾 100% COMPLETE 🐾</span>
+  </div>
+</div>
+
+
     </section>
 
     

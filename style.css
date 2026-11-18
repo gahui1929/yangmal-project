@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.css");
+@import url("https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.css");@import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
 
 :root {
   --bg: #fff8ef;
@@ -229,4 +229,115 @@ textarea:focus-visible,
 a:focus-visible {
   outline: 3px solid var(--green);
   outline-offset: 3px;
+}
+
+/* 김양말 원형 완료 도장 */
+.complete-stamp {
+  width: 200px;
+  height: 200px;
+  margin: 24px auto 32px;
+  padding: 18px;
+
+  box-sizing: border-box;
+  border: 5px double #b9473e;
+  border-radius: 50%;
+
+  background: #fff9f3;
+  color: #b9473e;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  text-align: center;
+  font-family: 'Song Myung', serif;
+  transform: rotate(-10deg);
+
+  box-shadow: 2px 4px 0 rgba(185, 71, 62, 0.12);
+  animation: stamp-in 0.35s ease-out;
+}
+
+/* 체크리스트 미완료 시 숨기기 */
+.complete-stamp[hidden] {
+  display: none;
+}
+
+/* 도장 위아래 작은 글씨 */
+.complete-stamp span {
+  font-family: 'Song Myung', serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* 도장 가운데 한글 */
+.complete-stamp strong {
+  font-family: 'Song Myung', serif;
+  font-size: 27px;
+  font-weight: 900;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+/* 도장이 쾅 찍히는 애니메이션 */
+@keyframes stamp-in {
+  from {
+    opacity: 0;
+    transform: scale(1.6) rotate(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(-10deg);
+  }
+}
+
+/* 체크리스트와 도장을 겹치게 배치 */
+.task-area {
+  position: relative;
+}
+
+/* 완료 도장을 체크리스트 중앙에 겹치기 */
+.task-area .complete-stamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+
+  margin: 0;
+  width: 200px;
+  height: 200px;
+
+  background: rgba(255, 249, 243, 0.25);
+  opacity: 0.82;
+
+  pointer-events: none;
+
+  transform: translate(-50%, -50%) rotate(-12deg);
+  animation: stamp-overlay 0.4s ease-out both;
+}
+
+/* 완료 전에는 도장 숨기기 */
+.task-area .complete-stamp[hidden] {
+  display: none;
+}
+
+/* 실제 도장을 찍는 듯한 등장 효과 */
+@keyframes stamp-overlay {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.6) rotate(-12deg);
+  }
+
+  65% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(0.94) rotate(-12deg);
+  }
+
+  100% {
+    opacity: 0.82;
+    transform: translate(-50%, -50%) scale(1) rotate(-12deg);
+  }
 }
